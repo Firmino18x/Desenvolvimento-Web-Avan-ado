@@ -21,3 +21,9 @@ for(const usuario of usuarios){
         console.log(usuario.nome)
     }
 }
+
+for(const usuario of usuarios){
+    if(usuario.idade > 18){
+        console.log(usuario.nome)
+    }
+}
