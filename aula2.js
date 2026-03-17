@@ -18,12 +18,30 @@ console.log(`${usuario.nome}: total = ${total}`)
 
 for(const usuario of usuarios){
     if(usuario.ativo === true){
-        console.log(usuario.nome)
+        console.log(usuario.nome)   
     }
 }
 
-for(const usuario of usuarios){
-    if(usuario.idade > 18){
+usuarios.forEach(usuario => {
+    if(usuario.idade >= 18){
         console.log(usuario.nome)
     }
+})
+
+let maiorTotal = 0
+let maiorGasto = ''
+
+for (const usuario of usuarios) {
+    let total = 0
+
+    for (const valor of usuario.compras) {
+        total += valor
+    }
+
+    if (total > maiorTotal) {
+        maiorTotal = total
+        maiorGasto = usuario.nome
+    }
 }
+
+console.log(`Quem mais gastou foi ${maiorGasto} com ${maiorTotal}`)
